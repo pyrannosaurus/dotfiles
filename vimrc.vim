@@ -71,3 +71,5 @@ nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gd :Gvdiffsplit<CR>
+
+command! -range=% Sqlfmt <line1>,<line2>!sqlfmt - 2>/dev/null
