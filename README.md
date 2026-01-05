@@ -43,3 +43,8 @@ The .tmux.conf does make an assumption that .tmux.mac.conf is in ~/dotfiles and 
 
 ## NVIM version
 nvim version 11 seems to be necessary in order to define plugins in vimrc instead of lua AND use treesitter.  The "linux" section here https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package seems to be the most straightforward instructions in the event that installing via package manager isn't allowing up to version 11
+
+## Node
+for using pyright, currently have NVM references in .local_config.  May move to .bashrc.  It is this
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
