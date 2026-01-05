@@ -7,6 +7,7 @@ A portable configuration for Neovim (v0.11+), Vim, Tmux, and Zsh/Bash.
 - `vimrc.vim`: Shared Vim/Neovim settings (Plugins, Keybinds).
 - `.tmux.conf`: Terminal multiplexer config.
 - `.zshrc` / `.bashrc`: Shell configurations.
+- `.local_config`: Should live in home directory, for anything machine-specific that should not be in source control
 
 ## Installation
 
@@ -39,3 +40,6 @@ This config expects the following tools to be installed on your system:
 ## Note on Tmux
 Platform-specific tmux configs (.tmux.linux.conf, .tmux.mac.conf) are stored here but are not symlinked automatically. Reference them within your main .tmux.conf based on your OS.
 The .tmux.conf does make an assumption that .tmux.mac.conf is in ~/dotfiles and that a private tmux file is located in ~/.  Adjust accordingly.
+
+## NVIM version
+nvim version 11 seems to be necessary in order to define plugins in vimrc instead of lua AND use treesitter.  The "linux" section here https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package seems to be the most straightforward instructions in the event that installing via package manager isn't allowing up to version 11

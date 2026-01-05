@@ -7,22 +7,22 @@ red='\e[31m'
 magenta='\e[35m'
 reset='\e[m'
 
-git_prompt=""
 for file in \
-    "/usr/share/git-core/contrib/completion/git-prompt.sh"
+    "/usr/share/git-core/contrib/completion/git-prompt.sh" \
+    "$HOME/dotfiles/git-prompt.sh"
 do
     if [ -f "$file" ]; then
         source "$file"
-        git_prompt='$(__git_ps1 " (${magenta}%s${reset})")'
         break
     fi
 done
-PROMPT_COMMAND='PS1="${cyan}\u${reset}@${red}\H ${yellow}\w${reset}${git_prompt} \$ "'
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUPSTREAM="auto"
+
+PS1="${cyan}\u${reset}@${red}\H ${yellow}\w${reset}\$(__git_ps1 ' (${magenta}%s${reset})') \$ "
 
 for file in \
     "/usr/share/bash-completion/completions/git" \
