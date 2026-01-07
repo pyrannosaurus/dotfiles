@@ -30,3 +30,4 @@ for file in \
 do
     [ -f "$file" ] && . "$file"
 done
+alias grepdev='grep --color=auto --exclude-dir={.git,node_modules,venv,env,__pycache__,site-packages,dist,build,.next,.perl-libs}'
